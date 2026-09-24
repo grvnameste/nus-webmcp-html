@@ -1,0 +1,157 @@
+/* ==========================================================================
+   Course Detail Page
+   ========================================================================== */
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+
+.detail-header {
+  margin-bottom: 20px;
+}
+
+.detail-header .course-card-top {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.detail-header h1 {
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+}
+
+.detail-header p.lead {
+  color: var(--color-text-muted);
+  font-size: 1.02rem;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.overview-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.overview-item span {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+}
+
+.overview-item strong {
+  font-size: 1rem;
+}
+
+.detail-section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.detail-section h2 {
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+}
+
+.detail-section ul {
+  display: grid;
+  gap: 10px;
+}
+
+.detail-section ul li {
+  padding-left: 22px;
+  position: relative;
+  color: var(--color-text);
+  font-size: 0.94rem;
+}
+
+.detail-section ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.detail-section p {
+  color: var(--color-text);
+  font-size: 0.94rem;
+}
+
+.detail-sidebar {
+  position: sticky;
+  top: 96px;
+}
+
+.cta-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.cta-card .fee {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.cta-card .fee-note {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  margin-bottom: 18px;
+}
+
+.cta-card dl {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.cta-card dl div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 8px;
+}
+
+.cta-card dt {
+  color: var(--color-text-muted);
+}
+
+.cta-card dt {
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-sidebar {
+    position: static;
+  }
+}
