@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register Interest — SkillPath Academy</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/registration.css" />
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SP</span>
+        SkillPath Academy
+      </a>
+      <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+        <button
+          type="button"
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="siteNav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="registrations.html">My Registrations</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <div class="page-header">
+      <div class="container">
+        <h1>Register Interest</h1>
+        <p>Fill in your details below. Your information is saved locally in this browser.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="summary-card" id="courseSummaryCard"></div>
+      <div class="empty-state" id="courseMissingState" hidden></div>
+
+      <form class="registration-form" id="registrationForm" novalidate>
+        <input type="hidden" id="courseId" name="courseId" />
+
+        <h2 class="form-section-title">Course Selection</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="preferredCourse">Preferred Course</label>
+            <input type="text" id="preferredCourse" name="preferredCourse" readonly />
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="preferredIntake">Preferred Intake <span class="required">*</span></label>
+            <select id="preferredIntake" name="preferredIntake" required>
+              <option value="">Select an intake</option>
+            </select>
+            <span class="error-message"></span>
+          </div>
+        </div>
+
+        <h2 class="form-section-title">Personal Information</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="fullName">Full Name <span class="required">*</span></label>
+            <input type="text" id="fullName" name="fullName" maxlength="80" required />
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address <span class="required">*</span></label>
+            <input type="email" id="email" name="email" maxlength="120" required />
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile Number <span class="required">*</span></label>
+            <input type="tel" id="mobile" name="mobile" maxlength="16" placeholder="e.g. 91234567" required />
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth <span class="required">*</span></label>
+            <input type="date" id="dob" name="dob" required />
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="idNumber">Identification Number (NRIC/Passport) <span class="required">*</span></label>
+            <input type="text" id="idNumber" name="idNumber" maxlength="20" required />
+            <span class="error-message"></span>
+          </div>
+        </div>
+
+        <h2 class="form-section-title">Organization Details</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="company">Company/Organization</label>
+            <input type="text" id="company" name="company" maxlength="100" />
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="jobTitle">Job Title</label>
+            <input type="text" id="jobTitle" name="jobTitle" maxlength="100" />
+            <span class="error-message"></span>
+          </div>
+        </div>
+
+        <h2 class="form-section-title">Address</h2>
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label for="address">Address <span class="required">*</span></label>
+            <textarea id="address" name="address" maxlength="200" required></textarea>
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="postalCode">Postal Code <span class="required">*</span></label>
+            <input type="text" id="postalCode" name="postalCode" maxlength="10" required />
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="country">Country <span class="required">*</span></label>
+            <select id="country" name="country" required>
+              <option value="">Select a country</option>
+              <option value="Singapore">Singapore</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="India">India</option>
+              <option value="Philippines">Philippines</option>
+              <option value="Australia">Australia</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="error-message"></span>
+          </div>
+        </div>
+
+        <h2 class="form-section-title">Additional Information</h2>
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label for="comments">Additional Comments</label>
+            <textarea id="comments" name="comments" maxlength="500" placeholder="Anything else you'd like us to know?"></textarea>
+            <span class="error-message"></span>
+          </div>
+        </div>
+
+        <div class="error-message" id="submitError" role="alert" hidden></div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" onclick="history.back()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit Registration</button>
+        </div>
+
+        <p class="form-note">
+          Fields marked with * are required. Your information will be stored only in
+          this browser's local storage and is not suitable for storing sensitive
+          personal data in a production system.
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="footerYear"></span> SkillPath Academy. Demo project for educational purposes only.</p>
+      <p>Registration data is stored locally in your browser and is not sent to any server.</p>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/registration.js"></script>
+</body>
+</html>

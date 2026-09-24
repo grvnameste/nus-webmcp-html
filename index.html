@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillPath Academy — Lifelong Learning Courses</title>
+  <meta name="description" content="Browse professional and skills-based courses, view course details, and register your interest online." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SP</span>
+        SkillPath Academy
+      </a>
+      <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+        <button
+          type="button"
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="siteNav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="registrations.html">My Registrations</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Build skills that move your career forward.</h1>
+          <p>
+            Explore a curated range of professional development and skills-based
+            courses. Compare options, read the details, and register your interest
+            online in minutes.
+          </p>
+          <div class="hero-actions">
+            <a href="courses.html" class="btn btn-primary">Browse Courses</a>
+            <a href="#categoryGrid" class="btn btn-outline">Explore Categories</a>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>10+</strong>
+            <span>Courses</span>
+          </div>
+          <div class="hero-stat">
+            <strong>6</strong>
+            <span>Categories</span>
+          </div>
+          <div class="hero-stat">
+            <strong>100%</strong>
+            <span>Online Registration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Browse by Category</h2>
+          <p>Find courses grouped by area of interest.</p>
+        </div>
+        <div class="category-grid" id="categoryGrid"></div>
+      </div>
+    </section>
+
+    <section class="featured-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Featured Courses</h2>
+          <a href="courses.html">View All Courses</a>
+        </div>
+        <div class="course-grid" id="featuredCoursesGrid"></div>
+      </div>
+    </section>
+
+    <section class="why-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Why Learn With Us</h2>
+          <p>Practical learning built around working professionals.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Practical, Job-Ready Skills</h3>
+            <p>Courses focus on hands-on skills you can apply at work straight away, taught by industry practitioners.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Flexible Learning Modes</h3>
+            <p>Choose from online, classroom, and hybrid delivery to fit your schedule and preferred way of learning.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Simple Online Registration</h3>
+            <p>Register your interest in just a few minutes with a straightforward, accessible online form.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="container">
+        <h2>Ready to get started?</h2>
+        <p>Explore the full catalogue and find the course that fits your goals.</p>
+        <a href="courses.html" class="btn btn-primary">Browse Courses</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="footerYear"></span> SkillPath Academy. Demo project for educational purposes only.</p>
+      <p>Registration data is stored locally in your browser and is not sent to any server.</p>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+</body>
+</html>

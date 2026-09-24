@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses — SkillPath Academy</title>
+  <meta name="description" content="Search and filter professional development courses by category, status, and learning mode." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/courses.css" />
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SP</span>
+        SkillPath Academy
+      </a>
+      <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+        <button
+          type="button"
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="siteNav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="registrations.html">My Registrations</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <div class="page-header">
+      <div class="container">
+        <h1>Course Listing</h1>
+        <p>Search and filter our courses by keyword, category, status, and learning mode to find the right fit for you.</p>
+      </div>
+    </div>
+
+    <section class="course-toolbar">
+      <div class="container">
+        <div class="toolbar-inner">
+          <div class="form-field">
+            <label for="searchInput">Search</label>
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Search by course name or keyword"
+              autocomplete="off"
+            />
+          </div>
+          <div class="form-field">
+            <label for="categoryFilter">Category</label>
+            <select id="categoryFilter">
+              <option value="">All categories</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="statusFilter">Status</label>
+            <select id="statusFilter">
+              <option value="">All statuses</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="modeFilter">Mode</label>
+            <select id="modeFilter">
+              <option value="">All modes</option>
+            </select>
+          </div>
+          <button type="button" id="resetFilters" class="btn btn-secondary">Reset Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="course-results">
+      <div class="container">
+        <div class="results-bar">
+          <span id="resultsCount"></span>
+        </div>
+        <div class="course-grid" id="courseGrid"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <div class="icon">🔍</div>
+          <h3>No courses match your filters</h3>
+          <p>Try a different keyword or reset the filters to see all courses.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="footerYear"></span> SkillPath Academy. Demo project for educational purposes only.</p>
+      <p>Registration data is stored locally in your browser and is not sent to any server.</p>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/courses.js"></script>
+</body>
+</html>

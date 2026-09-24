@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Registrations — SkillPath Academy</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/registration.css" />
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">SP</span>
+        SkillPath Academy
+      </a>
+      <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+        <button
+          type="button"
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="siteNav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="registrations.html">My Registrations</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <div class="page-header">
+      <div class="container">
+        <h1>Registration Management</h1>
+        <p>View, search, and manage course registrations stored in this browser. This page is provided for demonstration purposes.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="admin-toolbar">
+        <div class="form-field">
+          <label for="adminSearch">Search</label>
+          <input type="search" id="adminSearch" placeholder="Search by name, email, ID..." autocomplete="off" />
+        </div>
+        <div class="form-field">
+          <label for="adminCourseFilter">Course</label>
+          <select id="adminCourseFilter">
+            <option value="">All courses</option>
+          </select>
+        </div>
+        <div class="spacer"></div>
+        <span id="adminResultsCount"></span>
+        <button type="button" id="exportCsvBtn" class="btn btn-secondary">Export CSV</button>
+        <button type="button" id="clearAllBtn" class="btn btn-danger">Clear All</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="registrations-table" id="registrationsTable">
+          <thead>
+            <tr>
+              <th scope="col">Registration ID</th>
+              <th scope="col">Date/Time</th>
+              <th scope="col">Course</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Mobile</th>
+              <th scope="col">Intake</th>
+              <th scope="col">Company</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="registrationsTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="empty-state" id="registrationsEmptyState" hidden></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="footerYear"></span> SkillPath Academy. Demo project for educational purposes only.</p>
+      <p>Registration data is stored locally in your browser and is not sent to any server.</p>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
