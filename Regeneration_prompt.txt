@@ -1,0 +1,234 @@
+PROJECT REGENERATION PROMPT FOR SKILLPATH ACADEMY HTML FILES
+================================================================
+
+PROJECT OVERVIEW:
+SkillPath Academy is a professional skills-based course platform website. It is a demo project for educational purposes. The website allows users to browse courses, register interest in courses, view their registrations, and manage registration data locally using browser storage.
+
+TECHNOLOGY STACK:
+- HTML5 with semantic markup
+- CSS (modular structure with separate stylesheets)
+- JavaScript (vanilla, no frameworks)
+- Local browser storage (localStorage) for data persistence
+- Accessibility features (skip links, ARIA labels, semantic HTML)
+
+PROJECT STRUCTURE:
+- 6 HTML files in root directory
+- CSS files in /css directory
+- JavaScript files in /js directory
+- No backend server - all data stored locally in browser
+
+HTML FILES TO CREATE:
+
+1. INDEX.HTML (Home/Landing Page)
+   - Title: "SkillPath Academy — Lifelong Learning Courses"
+   - Meta description: "Browse professional and skills-based courses, view course details, and register your interest online."
+   - Page structure:
+     * Header with logo "SP SkillPath Academy" and navigation menu (Home, Courses, My Registrations)
+     * Hamburger menu toggle for mobile
+     * Hero section with headline "Build skills that move your career forward."
+     * Hero description text about exploring professional development courses
+     * Two hero CTA buttons: "Browse Courses" (primary) and "Explore Categories" (outline)
+     * Hero statistics: 10+ Courses, 6 Categories, 100% Online Registration
+     * "Browse by Category" section with dynamic category grid (id="categoryGrid")
+     * "Featured Courses" section with dynamic course grid (id="featuredCoursesGrid") and "View All Courses" link
+     * "Why Learn With Us" section with 3 feature cards:
+       - Practical, Job-Ready Skills
+       - Flexible Learning Modes
+       - Simple Online Registration
+     * CTA Banner: "Ready to get started?" with Browse Courses button
+     * Footer with copyright year (dynamic), company name, and storage note
+   - Links stylesheet: css/style.css
+   - Links script: js/common.js
+   - Include skip-link for accessibility
+
+2. COURSES.HTML (Course Listing/Search Page)
+   - Title: "Courses — SkillPath Academy"
+   - Meta description: "Search and filter professional development courses by category, status, and learning mode."
+   - Page structure:
+     * Same header and navigation as index.html
+     * Page header: "Course Listing" with description about search and filter functionality
+     * Toolbar section with:
+       - Search input: id="searchInput", placeholder "Search by course name or keyword"
+       - Category filter dropdown: id="categoryFilter" (populated dynamically)
+       - Status filter dropdown: id="statusFilter" (populated dynamically)
+       - Mode filter dropdown: id="modeFilter" (populated dynamically)
+       - Reset Filters button: id="resetFilters" (btn-secondary style)
+     * Results bar showing filtered count: id="resultsCount"
+     * Course grid container: id="courseGrid" (displays course cards dynamically)
+     * Empty state: id="emptyState" (shows when no courses match filters)
+       - Icon: 🔍
+       - Message: "No courses match your filters"
+       - Suggestion text: "Try a different keyword or reset the filters to see all courses."
+     * Footer same as index.html
+   - Links stylesheets: css/style.css, css/courses.css
+   - Links scripts: js/common.js, js/courses.js
+
+3. COURSE-DETAIL.HTML (Individual Course Details Page)
+   - Title: "Course Details — SkillPath Academy"
+   - No meta description in template
+   - Page structure:
+     * Same header and navigation as other pages
+     * Breadcrumb navigation: id="breadcrumb" (populated dynamically)
+     * Course detail content container: id="courseDetailContent" (populated dynamically)
+     * Error state container: id="courseErrorState" (hidden by default, shows if course not found)
+     * Footer same as other pages
+   - Links stylesheets: css/style.css, css/course-detail.css
+   - Links scripts: js/common.js, js/course-detail.js
+
+4. REGISTER-INTEREST.HTML (Course Registration Form)
+   - Title: "Register Interest — SkillPath Academy"
+   - Meta description: None in template
+   - Page structure:
+     * Same header and navigation
+     * Page header: "Register Interest" with description "Fill in your details below. Your information is saved locally in this browser."
+     * Course summary card: id="courseSummaryCard" (populated dynamically)
+     * Course missing state: id="courseMissingState" (hidden by default)
+     * Registration form: id="registrationForm" (novalidate attribute)
+       - Hidden field: id="courseId" (stores selected course ID)
+
+       FORM SECTIONS:
+       A. Course Selection:
+          * Preferred Course (read-only text field): id="preferredCourse"
+          * Preferred Intake (required dropdown): id="preferredIntake"
+
+       B. Personal Information:
+          * Full Name (required, max 80 chars): id="fullName"
+          * Email Address (required, email type, max 120 chars): id="email"
+          * Mobile Number (required, tel type, max 16 chars): id="mobile", placeholder "e.g. 91234567"
+          * Date of Birth (required, date type): id="dob"
+          * Identification Number - NRIC/Passport (required, max 20 chars): id="idNumber"
+
+       C. Organization Details:
+          * Company/Organization (optional, max 100 chars): id="company"
+          * Job Title (optional, max 100 chars): id="jobTitle"
+
+       D. Address:
+          * Address (required, textarea, max 200 chars): id="address"
+          * Postal Code (required, max 10 chars): id="postalCode"
+          * Country (required, dropdown): id="country"
+            - Options: Singapore, Malaysia, Indonesia, India, Philippines, Australia, Other
+
+       E. Additional Information:
+          * Additional Comments (optional, textarea, max 500 chars): id="comments", placeholder "Anything else you'd like us to know?"
+
+       * Submit error message container: id="submitError" (hidden by default)
+       * Form actions:
+         - Cancel button (secondary style, uses history.back())
+         - Submit Registration button (primary style)
+       * Form note: "Fields marked with * are required. Your information will be stored only in this browser's local storage and is not suitable for storing sensitive personal data in a production system."
+   - Links stylesheets: css/style.css, css/registration.css
+   - Links scripts: js/common.js, js/storage.js, js/registration.js
+   - All form fields have error-message spans for validation feedback
+   - Required fields marked with <span class="required">*</span>
+
+5. REGISTRATION-SUCCESS.HTML (Success Confirmation Page)
+   - Title: "Registration Successful — SkillPath Academy"
+   - Meta description: None
+   - Page structure:
+     * Same header and navigation
+     * Container with inline padding-top: 40px
+     * Success content container: id="successContent" (populated dynamically with registration details)
+     * Error state container: id="successErrorState" (hidden by default)
+     * Footer same as others
+   - Links stylesheets: css/style.css, css/registration.css
+   - Links scripts: js/common.js, js/storage.js, js/registration.js
+
+6. REGISTRATIONS.HTML (Registration Management/Admin Page)
+   - Title: "My Registrations — SkillPath Academy"
+   - Meta description: None
+   - Page structure:
+     * Same header and navigation
+     * Page header: "Registration Management" with description "View, search, and manage course registrations stored in this browser. This page is provided for demonstration purposes."
+     * Admin toolbar with:
+       - Search input: id="adminSearch", placeholder "Search by name, email, ID..."
+       - Course filter dropdown: id="adminCourseFilter"
+       - Spacer div
+       - Results count display: id="adminResultsCount"
+       - Export CSV button: id="exportCsvBtn" (btn-secondary style)
+       - Clear All button: id="clearAllBtn" (btn-danger style)
+     * Table wrapper with responsive class
+     * Registrations table: id="registrationsTable"
+       - Columns: Registration ID, Date/Time, Course, Name, Email, Mobile, Intake, Company, Actions
+       - Table body: id="registrationsTableBody" (populated dynamically)
+     * Empty state: id="registrationsEmptyState" (hidden by default)
+     * Footer same as others
+   - Links stylesheets: css/style.css, css/registration.css
+   - Links scripts: js/common.js, js/storage.js, js/admin.js
+
+COMMON ELEMENTS ACROSS ALL PAGES:
+- DOCTYPE: HTML5
+- Language: en
+- Meta charset: UTF-8
+- Viewport meta for responsive design
+- Skip-to-main-content link (class="skip-link")
+- Header with:
+  * Logo link to index.html: class="logo" with span.logo-mark containing "SP"
+  * Navigation with hamburger menu toggle
+  * Nav toggle button: id="navToggle" (class="nav-toggle", aria-label, aria-expanded)
+  * Nav list with 3 links: Home, Courses, My Registrations
+- Main content: id="mainContent"
+- Footer with:
+  * Dynamic copyright year: id="footerYear"
+  * Copyright text: "© [year] SkillPath Academy. Demo project for educational purposes only."
+  * Data storage note: "Registration data is stored locally in your browser and is not sent to any server."
+- Container class for layout wrapping
+- Accessibility features:
+  * ARIA labels on navigation
+  * Semantic HTML5 elements
+  * Skip links
+  * Proper heading hierarchy
+
+CSS FILES REQUIRED:
+1. css/style.css - Main stylesheet with global styles, component styles, layout
+2. css/courses.css - Additional styles specific to courses listing page
+3. css/course-detail.css - Styles for course detail page
+4. css/registration.css - Styles for registration and admin pages
+
+JAVASCRIPT FILES REQUIRED:
+1. js/common.js - Loaded on all pages (header navigation, mobile menu, footer year)
+2. js/courses.js - Course listing page functionality (filtering, searching, grid rendering)
+3. js/course-detail.js - Course detail page (loads and displays course information)
+4. js/registration.js - Registration form handling (form submission, validation, storage)
+5. js/storage.js - Browser localStorage utilities (shared by registration and admin pages)
+6. js/admin.js - Registration management page (table rendering, search, export, delete)
+
+STYLING CLASSES TO IMPLEMENT:
+Button styles: .btn, .btn-primary, .btn-secondary, .btn-outline, .btn-danger
+Typography: .section-heading, .page-header, .form-section-title
+Layout: .container, .hero-inner, .header-inner, .footer-inner
+Grids: .category-grid, .course-grid, .feature-grid
+Forms: .registration-form, .form-grid, .form-group, .form-field, .full-width, .required, .error-message
+Other: .empty-state, .hero-stats, .hero-stat, .summary-card, .toolbar-inner, .admin-toolbar, .table-wrapper, .results-bar, .spacer
+
+IMPORTANT NOTES:
+- All data is stored locally in browser localStorage - no backend API calls
+- This is a demo/educational project
+- Mobile responsive design required (hamburger menu on mobile)
+- Accessible design (WCAG compliance)
+- Semantic HTML5 markup
+- All form fields in register-interest.html have validation feedback spans
+- Dynamic content is rendered by JavaScript, not hard-coded in HTML
+- The course data structure should support: ID, name, description, category, status (Open/Closed), mode (Online/Classroom/Hybrid), intakes (multiple dates), instructor, duration, level
+
+COURSE DATA STRUCTURE (for reference when generating):
+Each course should have:
+- ID (unique identifier)
+- Name
+- Description
+- Category (e.g., Technology, Business, Healthcare, Engineering, Design, Communication)
+- Status (Open, Closed)
+- Mode (Online, Classroom, Hybrid)
+- Available Intakes (array of dates)
+- Instructor name
+- Duration (e.g., "4 weeks", "2 months")
+- Level (e.g., Beginner, Intermediate, Advanced)
+
+REGENERATION INSTRUCTIONS:
+To regenerate all HTML files from another laptop:
+1. Create the 6 HTML files exactly as specified above
+2. Ensure all id attributes match exactly as defined
+3. Keep the exact same semantic structure and class names
+4. Do not modify the HTML structure - it is coupled with the CSS and JavaScript
+5. Verify all links and script references are correct
+6. Test that all pages have proper accessibility features
+7. Confirm responsive design works on mobile devices
